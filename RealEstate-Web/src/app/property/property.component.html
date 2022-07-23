@@ -1,0 +1,41 @@
+<a class="nav-link"  routerLink="/admin">Go Back</a>
+
+
+<table border="2">
+    <tr>
+        <td>Name of House</td>
+        <td>Name of vender</td>
+        <td>House Description</td>
+        <td>House Image Name</td>
+        <td>size of House</td>
+        <td>House Location</td>
+        <td>House Price</td>
+        <td>Discount</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let item of  house">
+        <td>
+            {{item.propertyName}}
+        </td>
+        <td>
+            {{item.userName}}
+        </td>
+        <td> {{item.propertyDescription}}
+        </td>
+        <td> {{item.propertyImage}}
+        </td>
+        <td> {{item.propertySize}}
+        </td>
+        <td> {{item.propertylocation}}
+        </td>
+        <td> {{item.propertyPrice}}
+        </td>
+        <td> {{item.discount}}
+        </td>
+        
+        <td>
+            <input type="button" [hidden]="(item.isApproved==1)?true:false" value="Add"  (click)="AddProperty(item)" value="Approve"/>
+            <label [hidden]="(item.isApproved==1)?false:true" >Approved</label>
+        </td>
+    </tr>
+</table>

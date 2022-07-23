@@ -1,0 +1,68 @@
+<!--
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Login</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form">
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">UserName</label>
+                            <input type="email" class="form-control"   [(ngModel)]="loginUserData.userName" id="floatingInput" placeholder="Please enter your User Name">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="loginUserData.password" id="floatingPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check"></div>
+                            </div>
+                        <button class="btn btn-lg btn-primary" (click)="LoginUser()" type="submit">Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+<body>
+    <div class="container-fluid min-vh-100">
+        <div class="container mt-9">
+            <h3>LOGIN FORM</h3>
+            <p>Write credentials in below fields and sign in your account</p>
+            <form action="/action_page.php" class="needs-validation">
+                <div class="mb-3 mt-3">
+
+                        <label class="form-label" for="uname">UserName</label>
+                        <input type="text" class="form-control"   [(ngModel)]="loginUserData.userName"  placeholder="Please enter your User Name"
+                        [ngModelOptions]="{standalone: true}" name="uname" required> 
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="pwd">Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="loginUserData.password"  placeholder="Password"
+                            [ngModelOptions]="{standalone: true}" name="pwd" required> 
+                             
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                    <label class="form-check-label" for="myCheck">I agree on term & condition.</label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </div>
+               
+                <button class="btn btn-lg btn-primary" (click)="LoginUser()" type="submit">SIGN IN </button> <br> <br>
+                <div>
+                    <p>Not a member? <a  routerLink="/register">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

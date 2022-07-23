@@ -1,0 +1,267 @@
+
+ <div class="row">
+    <ng-container *ngFor="let product of products " >
+        <div class="card col-md-13">
+            
+            <img src="../../assets/{{product.propertyImage}}" alt="">
+            <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">vender Name :- {{product.userName}}  </h6>
+            <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyName}}</h4>
+            <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">With size of {{product.propertySize}} sq/ft </h6>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Description:-{{product.propertyDescription}}</p>
+            <p><strong>Price:</strong> ${{product.propertyPrice}}</p>
+            <p><strong>Discount :- </strong> At ${{product.discount}} %</p>
+            <p><strong>image name:</strong> {{product.propertyImage}}</p>
+        </div>
+           
+    </ng-container>
+    
+</div>
+
+
+<div class="container">
+    <div class="py-5 text-center">
+
+        <h2>House Booking Form</h2>
+        <p class="lead">Fill up the form to get the approval for your booked house, after filling up the details click
+            on book this house to submit the form without compeleting it.</p>
+    </div>
+
+              
+           
+        
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">To book the house please fill you personal details below</h4>
+
+
+            <div class="mb-3">
+                <label for="address"> House Image Name</label>
+                <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.propertyImage" 
+                 id="address" placeholder="1234 Main St" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="username"> Vender Name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.venderName" [ngModelOptions]="{standalone: true}"
+                     id="username" placeholder="Username" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="address"> House price</label>
+                <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.housePrice" 
+                 id="address" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                    Please enter your current address.
+                </div>
+            </div>
+           
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">FUll name</label>
+                        <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.fullName" [ngModelOptions]="{standalone: true}"
+                        id="firstName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">UserName</label>
+                        <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.userName" [ngModelOptions]="{standalone: true}"
+                         id="lastName" placeholder="enter your username" value="" required>
+                        <div class="invalid-feedback">
+                            Valid  name is required.
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.email" [ngModelOptions]="{standalone: true}"
+                        id="email" placeholder="you@example.com" required>
+                        <div class="invalid-feedback" style="width: 100%;">
+                            Please enter a valid email address for shipping updates.
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="address"> Address</label>
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.address" [ngModelOptions]="{standalone: true}"
+                     id="address" placeholder="1234 Main St" required>
+                    <div class="invalid-feedback">
+                        Please enter your current address.
+                    </div>
+                </div>
+            
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Country</label>
+                        <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>INDIA</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid country.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="state">State</label>
+                        <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>Gujarat</option>
+                            <option>Mumbai</option>
+                            <option>Delhi</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    
+                </div>
+
+               //payment
+
+                <button class="btn btn-primary btn-lg btn-block" (click)="AddOrder() " type="submit"
+                >BOOK THIS HOUSE</button>
+           
+        </div>
+    
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+
+
+
+  <!--
+
+<div class="row mt-3 mx-3" style="margin-top:25px ;">
+    <div class="col-md-3">
+        <div style="margin-top: 10px; margin-right: 10px;" class="text-center">
+            <i id="animationDemo" data-mdb-animation="slide-right" data-mdb-toggle="animation"
+                data-mdb-animation-reset="true" data-mdb-animation-start="onScroll"
+                data-mdb-animation-on-scroll="repeat" class="fas fa-3x fa-shipping-fast text-white"></i>
+            <h3 class="mt-3 text-white">Welcome</h3>
+            <p class="white-text">You are 30 seconds away from completing your order!</p>
+        </div>
+        <div class="text-center">
+            <button routerLink="/cart" type="submit" class="btn btn-white btn-rounded back-button">Go back</button>
+        </div>
+    </div>
+
+    
+ 
+<!DOCTYPE html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="col-md-9 justify-content-center">
+        <div class="card card-custom pb-4">
+            <div class="card-body mt-0 mx-5">
+                <div class="text-center mb-3 pb-2 mt-3">
+                    <h4 style="color: #495057 ;">Delivery Details</h4>
+                </div>
+                </div>
+                </div>
+    </div>
+    <div class="row" >
+        <div class="column">
+            <table style="width:75%">
+                <tr>
+                    <div class="col-md-6 mb-3">
+                    <label for="firstName">FUll name</label>
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.fullName" [ngModelOptions]="{standalone: true}"
+                    id="firstName" placeholder="" value="" required>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">UserName</label>
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.userName" [ngModelOptions]="{standalone: true}"
+                     id="lastName" placeholder="enter your username" value="" required>
+                    
+                </div>
+            
+
+            <div class="mb-3">
+                <label for="username"> Vender Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.venderName" [ngModelOptions]="{standalone: true}"
+                     id="username" placeholder="Username" required>
+                    
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.email" [ngModelOptions]="{standalone: true}"
+                    id="email" placeholder="you@example.com" required>
+                    
+                </div>
+                
+            </div>
+
+            <div class="mb-3">
+                <label for="address"> Address</label>
+                <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.address" [ngModelOptions]="{standalone: true}"
+                 id="address" placeholder="1234 Main St" required>
+            
+            </div>
+
+            <div class="mb-3">
+                <label for="address"> House price</label>
+                <input type="text" class="form-control"   [(ngModel)]="TblOrderModel.housePrice" 
+                 id="address" placeholder="1234 Main St" required>
+            </div>
+
+        
+
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                    <label for="country">Country</label>
+                    <select class="custom-select d-block w-100" id="country" required>
+                        <option value="">Choose...</option>
+                        <option>INDIA</option>
+                    </select>
+                </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="state">State</label>
+                    <select class="custom-select d-block w-100" id="state" required>
+                        <option value="">Choose...</option>
+                        <option>Gujarat</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                    </select>
+
+                    <div class="invalid-feedback">
+                        Please provide a valid state.
+                    </div>
+                </div>
+        
+
+               <td> <input type="submit" (click)="AddOrder()" value="BOOk This"></td>
+                          
+       -->

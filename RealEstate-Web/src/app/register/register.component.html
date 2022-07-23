@@ -1,0 +1,83 @@
+<!--
+
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Register</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form">
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">UserName</label>
+                            <input type="text" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.userName" placeholder="Please enter your email">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="registerUserData.password" placeholder="Password">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingemail">Email Id</label>
+                            <input type="email" class="form-control" id="floatingemail" [(ngModel)]="registerUserData.email" placeholder="Enter Email-Id">
+                        </div>
+                        
+                       
+
+                        <div class="col-12">
+                            <div class="form-check"></div>
+                            </div>
+                        <button class="btn btn-lg btn-primary" (click)="registerUser()" routerLink="/login" type="submit">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div class="container-fluid min-vh-100">
+    <div class="container mt-9">
+        <h3>REGISTRATION FORM</h3>
+        <p>Write details in below fields and click submit tp create your account</p>
+        <form class="needs-validation">
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">UserName</label>
+                <input type="text" class="form-control" [(ngModel)]="registerUserData.userName" id="uname"
+                    placeholder="Please enter your User Name" name="uname" required>
+
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="pwd">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="registerUserData.password"
+                    placeholder="Password" name="pwd" required>
+
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="pwd">User Type</label>
+                <select class="form-control" (change)="flagVendor($event)" [(ngModel)]="registerUserData.isVender">
+                    <option>Select</option>
+                    <option>User</option>
+                    <option>Vendor</option>
+                </select>
+
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+
+
+
+
+            <div class="col-12">
+                <div class="form-check"></div>
+            </div>
+            <button class="btn btn-lg btn-primary" (click)="registerUser()" type="submit">Register</button>
+        </form>
+    </div>
+</div>
